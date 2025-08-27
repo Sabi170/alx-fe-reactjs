@@ -1,4 +1,7 @@
 import WelcomeMessage from "./components/WelcomeMessage";
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -6,9 +9,13 @@ function App() {
   return (
     
       <div className="App">
-        <WelcomeMessage /></div>
+        <WelcomeMessage />
+        <Header />
+        <MainContent />
+        <Footer />
+        </div>
       
   );
 }
 
-export default App
+export default App;
