@@ -11,7 +11,7 @@ function UserProfile(props) {
             maxWidth: '400px',
             backgroundColor: '#f9f9f9'
         }}>
-            <h2 style={{ color: '#333', fontSize: '2em', marginBottom: '10px' }}>{props.name}</h2>
+            <h2 style={{ color: 'blue', fontSize: '2em', marginBottom: '10px' }}>{props.name}</h2>
             <p style={{ fontSize: '1.1em', color: '#555'}}>Age: <span style={{ fontWeight: 'bold', color: '#007bff' }}>
                 {props.age}</span></p>
                 <p style={{ fontSize: '1.1em', color: '#555' }}>Bio: <span style={{ fontStyle: 'italic' }}>{props.bio}</span>
