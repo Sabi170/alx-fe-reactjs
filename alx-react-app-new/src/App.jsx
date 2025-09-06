@@ -7,6 +7,8 @@ import Counter from "./components/Counter";
 
 
 function App() {
+
+
   return (
 
       <div style={{ fontFamily: 'Arial, sans-serif', margin: 0, padding: 0 }}>
