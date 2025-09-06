@@ -13,7 +13,7 @@ function MainContent() {
             boxShadow: '0 2px 4px rgba(0,0,0,05)'
         }}>
             <h2 style={{color: 'darkgreen', marginBottom: '15px' }}>Welcome to the Main Section</h2>
-            <p>This is the main content area of our application. We can put various information here, such as articles,
+            <p>I love to visit New York, Paris, and Tokyo. We can put various information here, such as articles,
                 images, or interactive elements.</p>
             <p>Inline styling allows us to quickly apply styles directly to elements without creating separate CSS files.
                 While convenient for small changes, for larger projects, external CSS or CSS modules are often preferred for better
