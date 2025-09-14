@@ -1,14 +1,32 @@
 import create from "zustand";
 
 const useRecipeStore = create((set) => ({
-  // ✅ Recipes
   recipes: [],
-
-  // ✅ Search & filter
   searchTerm: "",
   filteredRecipes: [],
 
-  // Add recipe
+  // ✅ Project 0: setRecipes
+  setRecipes: (recipes) =>
+    set(() => ({
+      recipes,
+      filteredRecipes: recipes, // initialize filtered list
+    })),
+
+  // ✅ Project 1: updateRecipe
+  updateRecipe: (id, updatedRecipe) =>
+    set((state) => {
+      const updated = state.recipes.map((r) =>
+        r.id === id ? { ...r, ...updatedRecipe } : r
+      );
+      return {
+        recipes: updated,
+        filteredRecipes: updated.filter((r) =>
+          r.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+        ),
+      };
+    }),
+
+  // ✅ Add recipe
   addRecipe: (recipe) =>
     set((state) => {
       const updated = [...state.recipes, recipe];
@@ -20,7 +38,7 @@ const useRecipeStore = create((set) => ({
       };
     }),
 
-  // Edit recipe
+  // ✅ Edit recipe (alias for updateRecipe)
   editRecipe: (id, updatedRecipe) =>
     set((state) => {
       const updated = state.recipes.map((r) =>
@@ -34,7 +52,7 @@ const useRecipeStore = create((set) => ({
       };
     }),
 
-  // Delete recipe
+  // ✅ Delete recipe
   deleteRecipe: (id) =>
     set((state) => {
       const updated = state.recipes.filter((r) => r.id !== id);
@@ -46,7 +64,7 @@ const useRecipeStore = create((set) => ({
       };
     }),
 
-  // Update search term & filter
+  // ✅ Project 2: Search & filter
   setSearchTerm: (term) =>
     set((state) => {
       const filtered = state.recipes.filter((recipe) =>
