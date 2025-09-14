@@ -4,6 +4,19 @@ import { useRecipeStore  } from "./recipeStore";
 
 function RecipeList() {
     const recipes = useRecipeStore((state) => state.recipes);
+    const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
+
+    if (filteredRecipes.length === 0) {
+        return <p>No recipes found.</p>
+    }
+
+    return (
+        <ul>
+            {filteredRecipes.map((recipe) => (
+                <li key={recipe.id}>{recipe.title}</li>
+            ))}
+        </ul>
+    );
 
     return (
         <div style={{ marginTop: "20px" }}>
