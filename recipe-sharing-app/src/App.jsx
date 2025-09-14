@@ -10,7 +10,7 @@ function App() {
       <div>
         <h1>Recipe Sharing App</h1>
         <nav>
-          <Link to="/">Homw</Link>
+          <Link to="/">Home</Link>
         </nav>
 
         <Routes>

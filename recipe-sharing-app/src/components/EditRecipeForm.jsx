@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useRecipeStore } from "./recipeStore";
 
-export default function EditRecipeForm({ recipe }) {
+function EditRecipeForm({ recipe, onClose }) {
     const updateRecipe = useRecipeStore((state) => state.updateRecipe);
-    const [title, setTitle] = useRecipeStore((state) => state.updateRecipe);
+    const [title, setTitle] = useState(recipe.title);
     const [description, setDescription] = useState(recipe.description);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
         updateRecipe({...recipe, title, description });
+        onClose();
     };
 
     return (
@@ -29,3 +30,5 @@ export default function EditRecipeForm({ recipe }) {
         </form>
     );
 }
+
+export default EditRecipeForm;
