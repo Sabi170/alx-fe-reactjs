@@ -1,9 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { useRecipeStore } from "./recipeStore";
-import { ssrExportNameKey } from "vite/module-runner";
 
-export default function DeleteRecipeButton({ id }) {
+function DeleteRecipeButton({ recipeId }) {
     const deleteRecipe = useRecipeStore((store) => state.deleteRecipe);
+    const navigate = useNavigate();
 
-    return <button onClick={() => deleteRecipe(id)}>Delete Recipe</button>
+    const handleDelete = () => {
+        deleteRecipe(recipeId);
+        navigate("/");
+    };
+ 
+    return <button onClick={handleDelete}>Delete Recipe</button>;
 }
+
+export default DeleteRecipeButton;
