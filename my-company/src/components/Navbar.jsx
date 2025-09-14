@@ -5,6 +5,7 @@ function Navbar() {
     const navStyle = {
         padding: "10px",
         background: "#333",
+        backgroundColor: "#f6f6f6",
         color: "#333",
         display: "flex",
         justifyContent: "space-around",
