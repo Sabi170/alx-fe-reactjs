@@ -10,16 +10,40 @@ const githubApi = axios.create({
         // If a token is available, include it for higher rate limits
         // Note: 'token ' (with a space) is crucial for the Authorization header
         Authorization: GITHUB_TOKEN ? `token ${GITHUB_TOKEN}` : undefined,
+        'User-Agent': 'GitHub-User-Search-App',
     },
 });
 
-export const fetchUserData = async (username) => {
+export const searchGitHubUsers = async (query, page = 1, perPage =30) => {
     try {
-        // GitHub API endpoint for user search: https://api.github.com/users/{username}
-        const response = await githubApi.get(`/user/${username}`);
-        return response.data; // Return the user data
+
+        const response = await githubApi.get('/search/users', {
+            params: {
+                q: query,
+                page: page,
+                per_page: perPage,
+            },
+        });
+
+        return response.data;
     } catch (error) {
-        console.error('Error fetching user data:', error.response ? error.response.data : error.message);
-        throw error; // Re-throw the error for the component to handle
+    // --- CORRECTED LINES BELOW ---
+    console.error('Error searching GitHub users:', error); // Log the full error object
+    if (error.response) {
+      console.error('Error response data:', error.response.data);
+      console.error('Error response status:', error.response.status);
+
+      // Specifically handle rate limit errors (403) or invalid query errors (422)
+      if (error.response.status === 403 && error.response.headers['x-ratelimit-remaining'] === '0') {
+          throw new Error("GitHub API rate limit exceeded. Please try again later or provide a token.");
+      }
+      if (error.response.status === 422) {
+          throw new Error("Invalid search query. Please check your inputs.");
+      }
+    } else {
+        console.error('No response from server:', error.message);
     }
+    // --- END CORRECTED LINES ---
+    throw error; // Re-throw the error for the component to handle
+  }
 };
