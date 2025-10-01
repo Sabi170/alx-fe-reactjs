@@ -29,7 +29,7 @@ function Search() {
             const data = await fetchUserData(username);
             setUserData(data); // Store the fetched data
         } catch (err) {
-            setError("Looks like we can't find the user."); // Set error message
+            setError("Looks like we cant find the user."); // Set error message
             console.error(err); // Log full error for debugging
         } finally {
             setLoading(false); // Set loading to false after API call (success or failure)
