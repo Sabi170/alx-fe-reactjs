@@ -29,37 +29,42 @@ function Search() {
     }
   };
 
+ // src/components/Search.jsx - ONLY THE handleSubmit FUNCTION IS CHANGED
+
+// ... (imports, state, other handlers are the same)
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     setLoading(true);
     setError(null);
-    setUserData([]); // Clear previous results
-    setHasSearched(true); // Indicate that a search has been attempted
+    setUserData([]);
+    setHasSearched(true);
 
-    if (!username.trim() && !location.trim() && (!minRepos.trim() || parseInt(minRepos, 10) <=
-  0)) {
-    setError("Please enter at least a username, location, or minimum repositories to search.");
+    // Basic client-side validation before calling the service
+    if (!username.trim() && !location.trim() && (!minRepos.trim() || parseInt(minRepos, 10) <= 0)) {
+        setError("Please enter at least a username, location, or minimum repositories to search.");
+        setLoading(false);
+        return;
+    }
+
+    try {
+      // Pass the individual state variables directly to the service function
+      const data = await searchGitHubUsers(
+        username,   // This is the username variable
+        location,   // This is the location variable
+        minRepos    // This is the minRepos variable
+      );
+      setUserData(data.items);
+    } catch (err) {
+      setError(err.message || "Looks like we can't find any users matching your criteria, or there was an API issue.");
+      console.error(err);
+    } finally {
       setLoading(false);
-      return;
-  }
+    }
+  };
 
-
-  try {
-    const data = await searchGitHubUsers(
-      username.trim(),
-      location.trim(),
-      minRepos.trim()
-    );
-    setUserData(data.items);
-  } catch (err) {
-    setError(err.message || "Looks like we can't find any users matching your criteria, or there was an API issue.");
-    console.error(err);
-  } finally {
-    setLoading(false);
-  }
-};
-
+// ... (rest of the component remains the same)
   return (
     <div className="search-page-container"> {/* */}
     <form onSubmit={handleSubmit} className="search-form-card"> {/* */}
