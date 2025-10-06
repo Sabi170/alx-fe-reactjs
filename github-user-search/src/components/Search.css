@@ -1,0 +1,185 @@
+.search-page-container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+.search-form-card {
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.search-input-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+.search-input-grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .search-input-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.form-group {
+    /* Ensures labels and inputs are grouped logically */
+}
+
+.form-label {
+    display: block;
+    text-align: left;
+    color: #374151;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+appearance: none;
+border: 1px solid #d1d5db;
+border-radius: 0.25rem;
+width: 100%;
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+padding-left: 0.75rem;
+padding-right: 0.75rem;
+color: #374151;
+line-height: 1.25;
+outline: none;
+transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.form-input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+    border-color: #3b82f6;
+}
+
+.search-button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.search-button:hover {
+    background-color: #1d4ed8;
+}
+
+.search-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 0 2px rgba(59, 130, 246, 0.5);
+
+}
+
+.search-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #9ca3af;
+}
+
+.results-area {
+    margin-top: 2rem;
+}
+
+.status-message.loading {
+    color: #3b82f6;
+}
+
+.status-message.error {
+    color: #ef4444;
+}
+
+.status-message.no-results {
+    color: #4b5563;
+}
+
+.user-grid-results {
+  display: grid;
+  grid-template-columns: 1fr; /* grid-cols-1 */
+  gap: 1.5rem; /* gap-6 */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .user-grid-results {
+    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+  }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .user-grid-results {
+    grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+  }
+}
+
+/* --- User Card --- */
+.user-card {
+  background-color: white; /* bg-white */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-md */
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 1.5rem; /* p-6 */
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  align-items: center; /* items-center */
+  transition: box-shadow 0.2s ease-in-out; /* transition-shadow duration-200 ease-in-out */
+}
+
+.user-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* hover:shadow-xl */
+}
+
+/* --- User Avatar --- */
+.user-avatar {
+  width: 5rem; /* w-20 (80px) */
+  height: 5rem; /* h-20 (80px) */
+  border-radius: 50%; /* rounded-full */
+  margin-bottom: 1rem; /* mb-4 */
+  border: 2px solid #60a5fa; /* border-2 border-blue-400 */
+  object-fit: cover; /* Ensures image covers the area without distorting */
+}
+
+/* --- User Login Name --- */
+.user-login-name {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+/* --- User Profile Link --- */
+.user-profile-link {
+  color: #2563eb; /* text-blue-600 */
+  text-decoration: none; /* default */
+  margin-bottom: 0.5rem; /* mb-2 */
+  transition: color 0.15s ease-in-out;
+}
+
+.user-profile-link:hover {
+  text-decoration: underline; /* hover:underline */
+}
+
+/* --- User Score --- */
+.user-score {
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+  margin-top: 0.5rem; /* Added for separation */
+}

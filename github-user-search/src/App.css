@@ -1,10 +1,47 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* src/App.css */
+
+/* Basic Reset for consistent styling */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
+  background-color: #f3f4f6; /* A light gray background for the whole app */
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
   text-align: center;
+  min-height: 100vh; /* Ensure app takes full height */
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
-  margin-bottom: 2rem;
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  margin-bottom: 2rem; /* Add some space below header */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+main {
+  flex-grow: 1; /* Allows main content to take up remaining space */
+  padding-bottom: 2rem; /* Ensure there's space at the bottom */
+}
+
+p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
 }
