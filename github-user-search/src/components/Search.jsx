@@ -37,37 +37,28 @@ function Search() {
     setUserData([]); // Clear previous results
     setHasSearched(true); // Indicate that a search has been attempted
 
-    // Construct the query based on available inputs
-    const queryParts = [];
-    if (username.trim()) {
-      queryParts.push(username.trim());
-    }
-    if (location.trim()) {
-      queryParts.push(`location:${location.trim()}`);
-    }
-    if (minRepos.trim() && parseInt(minRepos, 10) > 0) {
-      queryParts.push(`repos:>=${minRepos.trim()}`);
-    }
-
-    const searchQuery = queryParts.join(' ');
-
-    if (!searchQuery.trim()) {
-      setError("Please enter at least a username, location, or minimum repositories to search.");
+    if (!username.trim() && !location.trim() && (!minRepos.trim() || parseInt(minRepos, 10) <=
+  0)) {
+    setError("Please enter at least a username, location, or minimum repositories to search.");
       setLoading(false);
       return;
-    }
+  }
 
-    try {
-      // Call the new searchGitHubUsers service function
-      const data = await searchGitHubUsers(searchQuery);
-      setUserData(data.items); // GitHub Search API returns an object with 'items' array
-    } catch (err) {
-      setError("Looks like we cant find any users matching your criteria.");
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+
+  try {
+    const data = await searchGitHubUsers(
+      username.trim(),
+      location.trim(),
+      minRepos.trim()
+    );
+    setUserData(data.items);
+  } catch (err) {
+    setError(err.message || "Looks like we can't find any users matching your criteria, or there was an API issue.");
+    console.error(err);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="search-page-container"> {/* */}
