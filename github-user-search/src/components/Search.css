@@ -33,10 +33,6 @@
     }
 }
 
-.form-group {
-    /* Ensures labels and inputs are grouped logically */
-}
-
 .form-label {
     display: block;
     text-align: left;
@@ -47,24 +43,28 @@
 }
 
 .form-input {
-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-appearance: none;
-border: 1px solid #d1d5db;
-border-radius: 0.25rem;
-width: 100%;
-padding-top: 0.5rem;
-padding-bottom: 0.5rem;
-padding-left: 0.75rem;
-padding-right: 0.75rem;
-color: #374151;
-line-height: 1.25;
-outline: none;
-transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow */
+  appearance: none; /* appearance-none */
+  border: 1px solid #d1d5db; /* border */
+  border-radius: 0.25rem; /* rounded */
+  width: 100%; /* w-full */
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem; /* py-2 */
+  padding-left: 0.75rem; /* px-3 */
+  padding-right: 0.75rem; /* px-3 */
+  color: #374151; /* text-gray-700 - This is the text color, which is good for readability on a light background */
+  line-height: 1.25; /* leading-tight */
+  outline: none; /* focus:outline-none */
+  transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  
+  /* --- IMPORTANT CHANGE HERE --- */
+  background-color: #ffffff; /* Explicitly set a white background */
+  /* --- END IMPORTANT CHANGE --- */
 }
 
 .form-input:focus {
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
-    border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* focus:shadow-outline & focus:ring-2 focus:ring-blue-500 */
+  border-color: #3b82f6; /* focus:ring-blue-500 color */
 }
 
 .search-button {
