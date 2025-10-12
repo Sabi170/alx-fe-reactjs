@@ -1,38 +1,130 @@
 [
-    {
-        "id": 1,
-        "title": "Spaghetti Carbonara",
-        "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-        "image": "https://via.placeholder.com/150/FF5733/FFFFFF?text=Carbonara"
-    },
-    {
-        "id": 2,
-        "title": "Chicken Tikka Masala",
-        "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-        "image": "https://via.placeholder.com/150/33FF57/FFFFFF?text=TikkaMasala"
-    },
-    {
-        "id": 3,
-        "title": "Vegan Lentil Soup",
-        "summary": "A hearty and nutritious plant-based soup, packed with vegetabls and protein-rich lentils.",
-        "image": "https://via.placeholder.com/150/FF33A1/FFFFFF?text=BeefStirFry"
-    },
-    {
-        "id": 4,
-        "title": "Beef Stir-Fry",
-        "summary": "Quick and flavourful beef stir-fry with colorful vegetables and a savory sauce.",
-        "image": "https://via.placeholder.com/150/FF33A1/FFFFFF?text=BeefStirFry"
-    },
-    {
-        "id": 5,
-        "title": "Classic Pancakes",
-        "summary": "Fluffy golden pancakes, perfect for breakfast or brunch with your favourite toppings.",
-        "image": "https://via.placeholder.com/150/A133FF/FFFFFF?text=Pancakes"
-    },
-    {
-        "id": 6,
-        "title": "Mediterranean Salad",
-        "summary": "A refreshing salad with crisp vegetables, olives, feta chesse, and a lemon-herb dressing.",
-        "image": "https://via.placeholder.com/150/FFBD33/FFFFFF?text=Salad"
-    }
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/600/FF5733/FFFFFF?text=Carbonara",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta or guanciale",
+      "2 large eggs",
+      "50g Pecorino Romano cheese",
+      "Freshly ground black pepper"
+    ],
+    "instructions": [
+      "Cook spaghetti according to package directions.",
+      "While pasta cooks, crisp pancetta in a pan.",
+      "Whisk eggs, grated Pecorino, and plenty of black pepper in a bowl.",
+      "Drain pasta, reserving some pasta water. Add hot pasta to pancetta pan.",
+      "Remove pan from heat. Quickly add egg mixture, stirring vigorously. Add pasta water if needed to create a creamy sauce.",
+      "Serve immediately with extra Pecorino and black pepper."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/600/33FF57/FFFFFF?text=Tikka+Masala",
+    "ingredients": [
+      "500g chicken breast, cubed",
+      "1 cup plain yogurt",
+      "2 tbsp ginger-garlic paste",
+      "1 tbsp red chili powder",
+      "1 tsp turmeric powder",
+      "1 tsp garam masala",
+      "1 can (400g) crushed tomatoes",
+      "1/2 cup heavy cream",
+      "2 tbsp butter",
+      "Fresh cilantro for garnish"
+    ],
+    "instructions": [
+      "Marinate chicken with yogurt, ginger-garlic paste, red chili, turmeric, and garam masala for at least 1 hour.",
+      "Grill or bake chicken until cooked through and slightly charred.",
+      "In a large pan, melt butter. Add crushed tomatoes and cook until sauce thickens.",
+      "Stir in cooked chicken and heavy cream. Simmer for 10-15 minutes.",
+      "Garnish with fresh cilantro and serve with rice or naan."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Vegetable Stir Fry",
+    "summary": "A quick and healthy meal with assorted vegetables and a savory sauce.",
+    "image": "https://via.placeholder.com/600/5733FF/FFFFFF?text=Stir+Fry",
+    "ingredients": [
+      "1 tbsp soy sauce",
+      "1 tbsp oyster sauce (optional)",
+      "1 tsp sesame oil",
+      "1/2 cup vegetable broth",
+      "1 tbsp cornstarch",
+      "Mixed vegetables (broccoli, carrots, bell peppers, snap peas)",
+      "2 cloves garlic, minced",
+      "1 tbsp ginger, grated"
+    ],
+    "instructions": [
+      "Combine soy sauce, oyster sauce, sesame oil, broth, and cornstarch in a bowl for the sauce.",
+      "Heat oil in a large wok or skillet over high heat.",
+      "Add garlic and ginger, stir-fry for 30 seconds.",
+      "Add harder vegetables (broccoli, carrots), stir-fry for 3-4 minutes.",
+      "Add softer vegetables (bell peppers, snap peas), stir-fry for 2-3 minutes.",
+      "Pour in the sauce and cook until thickened, stirring constantly.",
+      "Serve immediately over rice or noodles."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Classic Beef Lasagna",
+    "summary": "Layers of pasta, rich meat sauce, and creamy béchamel, baked to perfection.",
+    "image": "https://via.placeholder.com/600/FFFF33/000000?text=Lasagna",
+    "ingredients": [
+      "12 lasagna noodles",
+      "500g ground beef",
+      "1 onion, chopped",
+      "2 cloves garlic, minced",
+      "1 can (800g) crushed tomatoes",
+      "1/2 cup tomato paste",
+      "1 tsp dried oregano",
+      "Salt and pepper to taste",
+      "500g ricotta cheese",
+      "1 large egg",
+      "1/2 cup grated Parmesan cheese",
+      "2 cups shredded mozzarella cheese"
+    ],
+    "instructions": [
+      "Cook lasagna noodles according to package directions; drain and set aside.",
+      "In a large skillet, brown ground beef with onion and garlic; drain fat.",
+      "Stir in crushed tomatoes, tomato paste, oregano, salt, and pepper. Simmer for 15-20 minutes.",
+      "In a separate bowl, combine ricotta cheese, egg, and Parmesan cheese.",
+      "Preheat oven to 375°F (190°C).",
+      "Spread a thin layer of meat sauce in a 9x13 inch baking dish.",
+      "Arrange 3 lasagna noodles over the sauce. Spread half of the ricotta mixture over the noodles, then top with a layer of meat sauce and a third of the mozzarella.",
+      "Repeat layers. Top with remaining noodles, sauce, and mozzarella.",
+      "Bake for 30 minutes, or until bubbly and cheese is melted and lightly browned. Let stand 10 minutes before serving."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Tomato Basil Soup",
+    "summary": "A comforting and flavorful soup made with ripe tomatoes and fresh basil.",
+    "image": "https://via.placeholder.com/600/33FFFF/000000?text=Tomato+Soup",
+    "ingredients": [
+      "2 tbsp olive oil",
+      "1 onion, chopped",
+      "2 cloves garlic, minced",
+      "1 can (800g) crushed tomatoes",
+      "4 cups vegetable broth",
+      "1/2 cup fresh basil leaves, chopped",
+      "1/4 cup heavy cream (optional)",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Heat olive oil in a large pot over medium heat.",
+      "Add onion and cook until softened, about 5-7 minutes.",
+      "Add garlic and cook for 1 minute more until fragrant.",
+      "Stir in crushed tomatoes and vegetable broth. Bring to a simmer.",
+      "Reduce heat, cover, and let it cook for 15-20 minutes.",
+      "Remove from heat, stir in fresh basil. Use an immersion blender (or carefully transfer to a regular blender) to blend until smooth.",
+      "Stir in heavy cream if desired. Season with salt and pepper to taste.",
+      "Serve hot, perhaps with a grilled cheese sandwich."
+    ]
+  }
 ]

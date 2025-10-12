@@ -1,77 +1,87 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import recipesData from '../data.json'; // Import the mock data
 
-function HomePage() {
-  const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const HomePage = () => {
+    const [recipes, setRecipes] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // Simulate fetching data
-    try {
-      setRecipes(recipesData);
-      setLoading(false);
-    } catch (err) {
-      setError("Failed to load recipes.");
-      setLoading(false);
-    }
-  }, []);
+    useEffect(() => {
+        const fetchRecipes = async () => {
+            try {
+                const data = await import('../data.json');
+                setRecipes(data.default);
+            } catch (err) {
+                setError("Failed to load recipes.");
+                console.error("Error loading recipes:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <p className="text-2xl text-gray-700">Loading recipes...</p>
-      </div>
-    );
-  }
+        fetchRecipes();
+    }, []);
 
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-red-100">
-        <p className="text-2xl text-red-700">{error}</p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="container mx-auto p-4 md:p-8">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-center text-gray-800 mb-10">
-        Our Delicious Recipes
-      </h1>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {recipes.map(recipe => (
-          <div
-            key={recipe.id}
-            className="bg-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out
-                       overflow-hidden border border-gray-200"
-          >
-            <img
-              src={recipe.image}
-              alt={recipe.title}
-              className="w-full h-48 object-cover object-center"
-            />
-            <div className="p-5">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                {recipe.title}
-              </h2>
-              <p className="text-gray-700 text-base leading-relaxed mb-4">
-                {recipe.summary}
-              </p>
-              {/* This will eventually be a Link to a detail page */}
-              <button
-                className="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md
-                           hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50
-                           transition duration-150 ease-in-out"
-              >
-                View Recipe
-              </button>
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen bg-gray-100">
+                <p className="text-xl text-gray-700">Loading recipes...</p>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="flex justify-center items-center h-screen bg-gray-100">
+                <p className="text-xl text-red-600">Error: {error}</p>
+            </div>
+        );
+    }
+
+    return (
+        <div className="container mx-auto p-4 py-8">
+            <h1 className="text-5xl font-extrabold text-center text-gray-900 mb-4">
+                Recipe Sharing Platform
+            </h1>
+
+            <p className="text-2xl text-center text-gray-700 mb-12">
+                Discover, Cook & Share Delicious Recipes
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {recipes.map((recipe) => (
+                    <div
+                    key={recipe.id}
+                    className="bg-white rounded-xl shadow-lg overflow-hidden
+                            transform transition duration-300 hover:scale-105
+                            hover:shadow-xl flex flex-col border border-gray-200"
+                        >
+                            <img
+                            src={recipe.image}
+                            alt={recipe.title}
+                            className="w-full h-48 object-cover object-center"
+                            />
+                        <div className="p-6 flex-grow flex flex-col">
+                            <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+                                {recipe.title}
+                            </h2>
+                    <p className="text-gray-600 text-sm mb-4 flex-grow">
+                        {recipe.summary}
+                        </p>
+                    <Link
+                    to={'/recipe/${recipe.id}'}
+                    className="mt-auto bg-blue-600 text-white py-2 px-4 rounded-md text-center
+                            hover:bg-blue-700 transition duration-300 self-start w-full sm:w-autp"
+                            >
+                                View Recipe
+                            </Link>
+                        </div>
+                    </div>
+                ))}
+                </div>
+            </div>    
+    );   
+};
 
 export default HomePage;
