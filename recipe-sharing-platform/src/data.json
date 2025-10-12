@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Spaghetti Carbonara",
+        "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+        "image": "https://via.placeholder.com/150/FF5733/FFFFFF?text=Carbonara"
+    },
+    {
+        "id": 2,
+        "title": "Chicken Tikka Masala",
+        "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+        "image": "https://via.placeholder.com/150/33FF57/FFFFFF?text=TikkaMasala"
+    },
+    {
+        "id": 3,
+        "title": "Vegan Lentil Soup",
+        "summary": "A hearty and nutritious plant-based soup, packed with vegetabls and protein-rich lentils.",
+        "image": "https://via.placeholder.com/150/FF33A1/FFFFFF?text=BeefStirFry"
+    },
+    {
+        "id": 4,
+        "title": "Beef Stir-Fry",
+        "summary": "Quick and flavourful beef stir-fry with colorful vegetables and a savory sauce.",
+        "image": "https://via.placeholder.com/150/FF33A1/FFFFFF?text=BeefStirFry"
+    },
+    {
+        "id": 5,
+        "title": "Classic Pancakes",
+        "summary": "Fluffy golden pancakes, perfect for breakfast or brunch with your favourite toppings.",
+        "image": "https://via.placeholder.com/150/A133FF/FFFFFF?text=Pancakes"
+    },
+    {
+        "id": 6,
+        "title": "Mediterranean Salad",
+        "summary": "A refreshing salad with crisp vegetables, olives, feta chesse, and a lemon-herb dressing.",
+        "image": "https://via.placeholder.com/150/FFBD33/FFFFFF?text=Salad"
+    }
+]

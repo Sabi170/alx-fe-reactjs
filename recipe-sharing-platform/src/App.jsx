@@ -1,9 +1,11 @@
+import React from 'react';
+import HomePage from './components/HomePage'; // Import the HomePage component
+import './index.css'; // Ensure your Tailwind CSS is imported
+
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-    <h1 className="text-5xl font-extrabold text-green-700">
-    Recipe Sharing Platform Ready!
-    </h1>
+    <div className="bg-gray-50 min-h-screen"> {/* A light background for the whole app */}
+      <HomePage />
     </div>
   );
 }
