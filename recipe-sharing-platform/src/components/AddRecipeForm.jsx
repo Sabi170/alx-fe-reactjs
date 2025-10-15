@@ -15,8 +15,11 @@ const AddRecipeForm = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Modified handleChange function to explicitly use e.target.name and e.target.value
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const name = e.target.name;  // Get name explicitly
+    const value = e.target.value; // Get value explicitly
+
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
