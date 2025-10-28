@@ -10,6 +10,7 @@ import ProfileSettings from './components/ProfileSettings';
 import BlogPost from './components/BlogPost';
 import NotFound from './components/NotFound';
 import Dashboard from './components/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const AuthContext = React.createContext(null);
 
@@ -30,17 +31,6 @@ const AuthProvider = ({ children }) => {
       {children}
       </AuthContext.Provider>
   );
-};
-
-const ProtectedRoute = ({ children  }) => {
-  const { isAuthenticated } = React.useContext(AuthContext);
-  const navigate = useNavigate();
-
-  if (!isAuthenticated) {
-
-    return <Navigate to="/login" replace/>;
-  }
-  return children;
 };
 
 const LoginPage = () => {
