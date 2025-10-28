@@ -78,7 +78,7 @@ function App() {
             <li style={{ marginRight: '20px' }}><Link to="/">Home</Link></li>
             <li style={{ marginRight: '20px' }}><Link to="/about">About</Link></li>
             <li style={{ marginRight: '20px' }}><Link to="/profile">Profile</Link></li>
-            <li style={{ marginRight: '20px' }}><Link to="/posts/123">Dynamic Post 123</Link></li>
+            <li style={{ marginRight: '20px' }}><Link to="/blog/123">Dynamic Blog Post 123</Link></li>
             <li style={{ marginRight: '20px' }}><Link to="/dashboard">Dashboard (Protected)</Link></li>
           </ul>
           <div>
@@ -121,7 +121,7 @@ function App() {
             } />
 
             {/* Dynamic Routing for Blog Posts */}
-            <Route path="/posts/:postId" element={<BlogPost />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
 
             {/* Catch-all for 404 Not Found */}
             <Route path="*" element={<NotFound />} />
